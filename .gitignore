@@ -4,6 +4,7 @@ cmake-subdir/build/hello
 cmake-library/build/hello
 
 cmake-find-glfw/build/window
+cmake-fetchcontent-glfw/build/window
 
 # General
 .DS_Store

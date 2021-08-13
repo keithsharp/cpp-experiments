@@ -5,6 +5,7 @@ Small experiments with C++ and associated tools, mainly CMake at the moment.
 + [`cmake-subdir`](https://github.com/keithsharp/cpp-experiments/tree/main/cmake-subdir) - include source files from a subdirectory.
 + [`cmake-library`](https://github.com/keithsharp/cpp-experiments/tree/main/cmake-library) - make a library using files in a subdirectory and link to executable.
 + [`cmake-find-glfw`](https://github.com/keithsharp/cpp-experiments/tree/main/cmake-find-glfw) - use CMake `find_package` and `pkg-config` to link to GLFW.
++ [`cmake-fetchcontent-glfw`](https://github.com/keithsharp/cpp-experiments/tree/main/cmake-fetchcontent-glfw) - use CMake `FetchContent` module to download, build, and link to GLFW.
 
 ## Pre-requisites
 Stuff you need to make this work, mainly for macOS.  I'm assuming you've got [HomeBrew](https://brew.sh) installed which has caused the `xcode-tools` to be installed, and hence `clang++`, `git`, and `make` to be installed.
