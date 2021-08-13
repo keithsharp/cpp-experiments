@@ -3,6 +3,7 @@ Small experiments with C++ and associated tools.
 
 + [`cmake-basic`](https://github.com/keithsharp/cpp-experiments/tree/main/cmake-basic) - simple, single C++ file CMake example.
 + [`cmake-subdir`](https://github.com/keithsharp/cpp-experiments/tree/main/cmake-subdir) - include source files from a subdirectory.
++ [`cmake-library`](https://github.com/keithsharp/cpp-experiments/tree/main/cmake-library) - make a library using files in a subdirectory and link to executable.
 
 ## Pre-requisites
 Stuff you need to make this work, mainly for macOS:
