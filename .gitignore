@@ -1,5 +1,6 @@
 # Binaries
 cmake-basic/build/hello
+cmake-subdir/build/hello
 
 # General
 .DS_Store
