@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.21.1)
 
-project(FindGLFW
+project(FetchGLFW
         VERSION 1.0.0
-        DESCRIPTION "Find a library (GLFW) on the system"
+        DESCRIPTION "Fetch and build a library (GLFW) from GitHub"
         LANGUAGES CXX
 )
 
