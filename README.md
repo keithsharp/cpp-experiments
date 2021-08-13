@@ -1,15 +1,16 @@
 # C++ Experiments
-Small experiments with C++ and associated tools.
+Small experiments with C++ and associated tools, mainly CMake at the moment.
 
 + [`cmake-basic`](https://github.com/keithsharp/cpp-experiments/tree/main/cmake-basic) - simple, single C++ file CMake example.
 + [`cmake-subdir`](https://github.com/keithsharp/cpp-experiments/tree/main/cmake-subdir) - include source files from a subdirectory.
 + [`cmake-library`](https://github.com/keithsharp/cpp-experiments/tree/main/cmake-library) - make a library using files in a subdirectory and link to executable.
++ [`cmake-find-glfw`](https://github.com/keithsharp/cpp-experiments/tree/main/cmake-find-glfw) - use CMake `find_package` and `pkg-config` to link to GLFW.
 
 ## Pre-requisites
-Stuff you need to make this work, mainly for macOS:
+Stuff you need to make this work, mainly for macOS.  I'm assuming you've got [HomeBrew](https://brew.sh) installed which has caused the `xcode-tools` to be installed, and hence `clang++`, `git`, and `make` to be installed.
 
-1. Examples use Clang++ as a compiler, get this by installing Xcode (or just the tools).
-2. Install CMake using HomeBrew: `brew install cmake`.
+1. Install CMake using HomeBrew: `brew install cmake`.
+2. For the `cmake-find-glfw` example you'll need to install GLFW with HomeBrew: `brew install glfw`.
 
 VS Code Extensions:
 1. [C/C++ for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools).

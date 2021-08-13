@@ -3,6 +3,8 @@ cmake-basic/build/hello
 cmake-subdir/build/hello
 cmake-library/build/hello
 
+cmake-find-glfw/build/window
+
 # General
 .DS_Store
 .AppleDouble
