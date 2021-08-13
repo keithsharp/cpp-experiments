@@ -6,6 +6,8 @@ cmake-library/build/hello
 cmake-find-glfw/build/window
 cmake-fetchcontent-glfw/build/window
 
+boost-program-options/build/example
+
 # General
 .DS_Store
 .AppleDouble
