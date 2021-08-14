@@ -2,13 +2,11 @@
 cmake-basic/build/hello
 cmake-subdir/build/hello
 cmake-library/build/hello
-
 cmake-find-glfw/build/window
 cmake-fetchcontent-glfw/build/window
-
 boost-program-options/build/example
-
 pseudo-random-numbers/build/random
+basic-spdlog-logger/build/logger
 
 # General
 .DS_Store
