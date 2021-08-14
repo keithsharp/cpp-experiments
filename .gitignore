@@ -8,6 +8,10 @@ boost-program-options/build/example
 pseudo-random-numbers/build/random
 basic-spdlog-logger/build/logger
 
+boost-download-build/build/example
+boost-download-build/build/Boost-prefix
+boost-download-build/build/INSTALL
+
 # General
 .DS_Store
 .AppleDouble
