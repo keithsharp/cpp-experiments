@@ -8,6 +8,8 @@ cmake-fetchcontent-glfw/build/window
 
 boost-program-options/build/example
 
+pseudo-random-numbers/build/random
+
 # General
 .DS_Store
 .AppleDouble
