@@ -12,6 +12,8 @@ boost-download-build/build/example
 boost-download-build/build/Boost-prefix
 boost-download-build/build/INSTALL
 
+singleton-spdlog-logger/build/app
+
 # General
 .DS_Store
 .AppleDouble

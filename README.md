@@ -10,6 +10,7 @@ Small experiments with C++ and associated tools, mainly CMake at the moment.
 + [`pseudo-random-numbers`](https://github.com/keithsharp/cpp-experiments/tree/main/pseudo-random-numbers) - generate pseudo random integers and floats based on a user supplied seed.
 + [`basic-spdlog-logger`](https://github.com/keithsharp/cpp-experiments/tree/main/basic-spdlog-logger) - simple test of building and using spdlog.
 + [`boost-download-build`](https://github.com/keithsharp/cpp-experiments/tree/main/boost-download-build) - download and build Boost rather than using the system version.
++ [`singleton-spdlog-logger`](https://github.com/keithsharp/cpp-experiments/tree/main/singleton-spdlog-logger) - abstract spdlog behind a singleton logger class.
 
 ## Pre-requisites
 Stuff you need to make this work, mainly for macOS.  I'm assuming you've got [HomeBrew](https://brew.sh) installed which has caused the `xcode-tools` to be installed, and hence `clang++`, `git`, and `make` to be installed.
