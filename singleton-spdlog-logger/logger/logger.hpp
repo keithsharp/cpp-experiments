@@ -12,9 +12,11 @@ public:
     Logger& operator=(Logger const&) = delete;
     Logger& operator=(Logger &&) = delete;
 
-    void info();
+    static void info();
 
 private:
+    void infoImpl();
+
     Logger() { };
     ~Logger() { };
 };
