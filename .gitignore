@@ -3,6 +3,7 @@ cmake-basic/build/hello
 cmake-subdir/build/hello
 cmake-library/build/hello
 cmake-find-glfw/build/window
+cmake-find-package/build/test
 cmake-fetchcontent-glfw/build/window
 boost-program-options/build/example
 pseudo-random-numbers/build/random
