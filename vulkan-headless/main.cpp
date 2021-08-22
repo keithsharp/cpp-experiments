@@ -1,7 +1,17 @@
 #include <iostream>
 #include <stdexcept>
+#include <vector>
+#include <string>
 
 #include <vulkan/vulkan.h>
+
+std::string getVulkanVersion(uint32_t version) {
+    uint32_t major = VK_API_VERSION_MAJOR(version);
+    uint32_t minor = VK_API_VERSION_MINOR(version);
+    uint32_t patch = VK_API_VERSION_PATCH(version);
+
+    return std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(patch);
+}
 
 void printVulkanVersion() {
     std::cout << "\tGetting Vulkan version...";
@@ -10,10 +20,7 @@ void printVulkanVersion() {
         std::cout << "failed." << std::endl;
         throw std::runtime_error("Could not query Vulkan version.");
     } else {
-        std::cout << " " << VK_API_VERSION_MAJOR(version) << "."
-                         << VK_API_VERSION_MINOR(version) << "."
-                         << VK_API_VERSION_PATCH(version)
-                         << std::endl;
+        std::cout << getVulkanVersion(version) << std::endl;
     }
 }
 
@@ -36,7 +43,7 @@ VkInstance createVkInstance() {
     instanceInfo.enabledExtensionCount = 0;
     instanceInfo.ppEnabledLayerNames = nullptr;
 
-    VkInstance instance;
+    VkInstance instance{};
     std::cout << "\tCreating VkInstance...";
     if (vkCreateInstance(&instanceInfo, nullptr, &instance) != VK_SUCCESS) {
         std::cout << " failed." << std::endl;
@@ -46,12 +53,54 @@ VkInstance createVkInstance() {
     return instance;
 }
 
+void printDeviceProperties(const VkPhysicalDevice &device) {
+    std::cout << "\tGetting device properties:" << std::endl;
+    VkPhysicalDeviceProperties properties{};
+    vkGetPhysicalDeviceProperties(device, &properties);
+    VkPhysicalDeviceFeatures features{};
+    vkGetPhysicalDeviceFeatures(device, &features);
+
+    std::cout << "\t\tDevice name: " << properties.deviceName << std::endl;
+    std::cout << "\t\tSupported Vulkan version: " << getVulkanVersion(properties.apiVersion) << std::endl;
+    std::cout << "\t\tSupports Tesselation shader: " << (features.tessellationShader == VK_TRUE ? "true" : "false") << std::endl;
+    std::cout << "\t\tSupports Geometry shader: " << (features.geometryShader == VK_TRUE ? "true" : "false") << std::endl;
+
+    VkPhysicalDeviceMemoryProperties memoryProperties{};
+    vkGetPhysicalDeviceMemoryProperties(device, &memoryProperties);
+    for (auto heap : memoryProperties.memoryHeaps) {
+        if (heap.flags & VK_MEMORY_HEAP_DEVICE_LOCAL_BIT) {
+            std::cout << "\t\tDevice local memory: " << heap.size << std::endl;
+        }
+    }
+}
+
+void queryVkPhysicalDevice(const VkInstance &instance) {
+    std::cout << "\tNumber of physical devices... ";
+    uint32_t deviceCount = 0;
+    if (vkEnumeratePhysicalDevices(instance, &deviceCount, nullptr) != VK_SUCCESS) {
+        std::cout << " failed to find any Vulkan enabled devices." << std::endl;
+        throw std::runtime_error("Failed to find any Vulkan enabled physical devices.");
+    }
+    std::cout << deviceCount << std::endl;
+
+    std::vector<VkPhysicalDevice> physicalDevices(deviceCount);
+    if (vkEnumeratePhysicalDevices(instance, &deviceCount, physicalDevices.data()) != VK_SUCCESS) {
+        std::cout << " failed to find any Vulkan enabled devices." << std::endl;
+        throw std::runtime_error("Failed to find any Vulkan enabled physical devices.");
+    }
+    for (auto device : physicalDevices) {
+        printDeviceProperties(device);
+    }
+
+}
+
 int main(int argc, char const *argv[])
 {
     std::cout << "Starting Vulkan tests:" << std::endl;
 
     printVulkanVersion();
     VkInstance instance = createVkInstance();
+    queryVkPhysicalDevice(instance);
 
     std::cout << "Tests completed successfully." << std::endl;
 
