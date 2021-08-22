@@ -12,6 +12,7 @@ Small experiments with C++ and associated tools, mainly CMake at the moment.
 + [`boost-download-build`](https://github.com/keithsharp/cpp-experiments/tree/main/boost-download-build) - download and build Boost rather than using the system version.
 + [`singleton-spdlog-logger`](https://github.com/keithsharp/cpp-experiments/tree/main/singleton-spdlog-logger) - abstract spdlog behind a singleton logger class.
 + [`cmake-find-package`](https://github.com/keithsharp/cpp-experiments/tree/main/cmake-find-package) - finding and linking a number of different libraries: spdlog, glm, glfw, and vulkan.
++ [`vulkan-headless`](https://github.com/keithsharp/cpp-experiments/tree/main/vulkan-headless) - playing around with basic Vulkan functionality without actually drawing anything..
 
 ## Pre-requisites
 Stuff you need to make this work, mainly for macOS.  I'm assuming you've got [HomeBrew](https://brew.sh) installed which has caused the `xcode-tools` to be installed, and hence `clang++`, `git`, and `make` to be installed.
